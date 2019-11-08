@@ -1,0 +1,12 @@
+- name: Install packages needed for installing Python
+  apt: pkg={{ item }}
+  with_items:
+    - wget
+    - xz-utils
+    - build-essential
+    - libsqlite3-dev
+    - libreadline-dev
+    - libssl-dev
+    - openssl
+  tags: packages, python
+  when: python_result.stat.exists == False

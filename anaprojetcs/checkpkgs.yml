@@ -1,0 +1,16 @@
+---
+- hosts: 127.0.0.1
+  tasks:
+  - name: check if package is installed
+    package:
+      name: "{{ item }}"
+      state: present
+    check_mode: true
+    register: "{{ item }}"
+    with_items:
+      - 'git'
+      - 'nginx'
+      - 'etc'
+      - 'python'
+      - 'ansible'
+      - 'vim'

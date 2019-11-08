@@ -1,0 +1,10 @@
+---
+- hosts: 127.0.0.1
+  tasks:
+  - name: Ansible apt remove pakages example
+    apt:
+      name: "{{ item }}"
+      state: absent
+    with_items:
+      - 'git'
+      - 'nginx'
